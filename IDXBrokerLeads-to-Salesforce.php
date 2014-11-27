@@ -8,7 +8,7 @@ $salesforce_token = 'YourSalesforceSecurityToken';
 //added this as the company as the Lead object does require the Company field, but this is not in by default in the IDX return
 $IDX_as_Company = 'IDX Lead';
 $interval = 1; //number of hours before $start_date see IDX Broker API docs for more on this
-$start_date = '2014-11-01+23:59:59' //date to begin pulling leads
+$start_date = date('c'); //using current date to begin pulling leads, set to ISO 8601 
 
 //get leads from IDX Broker API
 
