@@ -45,7 +45,7 @@ else
 foreach ($response as $lead){
 // access URL and request method
 $url = 'https://app.bombbomb.com/app/api/api.php?';
-$data = array('method' => 'AddContact', 'api_key' => $bombbomb_api_key, 'eml' => $lead["email"], 'firstname' => $lead["firstName"], 'leadlastname' => $lead["lastName"]);
+$data = array('method' => 'AddContact', 'api_key' => $bombbomb_api_key, 'eml' => $lead["email"], 'firstname' => $lead["firstName"], 'lastname' => $lead["lastName"]);
 $data = http_build_query($data); // encode and & delineate
 $method = 'POST';
 
