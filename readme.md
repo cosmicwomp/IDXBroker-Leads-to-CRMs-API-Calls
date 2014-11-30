@@ -10,11 +10,13 @@ You will also need the Force.com PHP tool kit for Salesforce
 
 Remember that changing your password in Salesforce resets you Security Token as well
 
-
-
 For more on these calls check the official docs
 
-IDX Broker API docs: http://middleware.idxbroker.com/docs/api/1.1/leads.php#lead
+All docs used:
 
-Salesforce docs:
-https://developer.salesforce.com/docs
+http://middleware.idxbroker.com/docs/api/1.1/index.php
+https://developer.salesforce.com/page/PHP_Toolkit
+http://www.bombbomb.com/api/
+https://api.followupboss.com/api-documentation/
+
+For more detail on each call visit the wiki on github
