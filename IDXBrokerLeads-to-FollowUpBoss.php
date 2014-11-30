@@ -54,7 +54,7 @@ foreach ($response as $lead){
       'emails' => array(array('value' => $lead["email"]))
     )
   );
-  // init cURL
+  // set up cURL
   $ch = curl_init('https://api.followupboss.com/v1/events');
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
@@ -62,6 +62,15 @@ foreach ($response as $lead){
   curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
   curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+
+  /*
+Saw mention of CA bundle file in https://github.com/FollowUpBoss/fub-api-examples/blob/master/php/send_lead_registration.php
+cURL CA bundle can be downloaded from http://curl.haxx.se/ca/cacert.pem
+curl_setopt($ch, CURLOPT_CAINFO, '/path/to/ca-bundle.crt');
+I did not need this in my testing
+
+  */
+
 
   // exec the cURL request and returned information. Store the returned HTTP code in $code for later reference
   $FollowUpBoss_response = curl_exec($handle);
