@@ -12,12 +12,16 @@ Remember that changing your password in Salesforce resets you Security Token as 
 
 For more on these calls check the official docs
 
-All docs used:
+API Docs:
 
 http://middleware.idxbroker.com/docs/api/1.1/index.php
+
 https://developer.salesforce.com/page/PHP_Toolkit
+
 http://www.bombbomb.com/api/
+
 https://api.followupboss.com/api-documentation/
+
 http://developers.contactually.com/docs/
 
 For more detail on each call visit this wiki for this repo
