@@ -31,7 +31,26 @@ $response = json_decode($response,true);
 else
 $error = $code;
 
-echo $code;
+//Zoho Generate Authentication token
 
-var_dump($response);
+$username = "testUsername";
+$password = "testPassword";
+$param = "SCOPE=ZohoCRM/crmapi&EMAIL_ID=".$username."&PASSWORD=".$password;
+$ch = curl_init("https://accounts.zoho.com/apiauthtoken/nb/create");
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $param);
+$result = curl_exec($ch);
+/*This part of the code below will separate the Authtoken from the result. 
+Remove this part if you just need only the result*/
+$anArray = explode("\n",$result);
+$authToken = explode("=",$anArray['2']);
+$cmp = strcmp($authToken['0'],"AUTHTOKEN");
+echo $anArray['2'].""; if ($cmp == 0)
+{
+echo "Created Authtoken is : ".$authToken['1'];
+return $authToken['1'];
+}
+curl_close($ch);
+
 ?>
